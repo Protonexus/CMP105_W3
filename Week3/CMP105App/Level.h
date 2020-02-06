@@ -15,6 +15,7 @@ public:
 	void update(float dt);
 	void render();
 	sf::Vector2f normalise(sf::Vector2f);
+	void checkBoundary(sf::CircleShape);
 
 private:
 	// Default functions for rendering to the screen.
@@ -26,16 +27,17 @@ private:
 	Input* input;
 
 	sf::CircleShape circle;
-	float speed;
 	sf::Vector2f direction;
-	sf::Vector2f circlePos;
+	float speed;
 
 	sf::CircleShape myPlayer;
-	sf::Vector2f direction2;
-	sf::Vector2f circle2Pos;
-	float speed2;
+	sf::Vector2f myPlayerDir;
+	float myPlayerSpeed;
 
 	sf::Vector2u screenBoundary;
 
-	bool keys[256];
+	std::string speedStrng;
+	sf::Font font;
+	sf::Text text;
+
 };
